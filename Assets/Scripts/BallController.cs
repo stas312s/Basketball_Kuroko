@@ -29,7 +29,7 @@ public class BallController : MonoBehaviour
 
     private void LaunchBall()
     {
-        Vector2 swipeDirection = (endMousePos - startMousePos).normalized;
+        Vector2 swipeDirection = (endMousePos - startMousePos);
         Vector2 force = -swipeDirection * forceMultiplier;
         rb.AddForce(force, ForceMode2D.Impulse);
     }

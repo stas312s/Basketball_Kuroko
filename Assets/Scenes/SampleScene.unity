@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70a5c279becdc14c908a54b6954dd39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceMultiplier: 15
+  forceMultiplier: 0.1
 --- !u!120 &604294005
 LineRenderer:
   m_ObjectHideFlags: 0
