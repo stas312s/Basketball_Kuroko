@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 570128137}
   - component: {fileID: 570128139}
   - component: {fileID: 570128138}
+  - component: {fileID: 570128140}
   m_Layer: 0
   m_Name: Basket
   m_TagString: Untagged
@@ -478,8 +479,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570128133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.14, y: 0.29, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 8.149, y: 0.269, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -498,7 +499,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.017814636, y: 0.26213777}
+  m_Offset: {x: 0.017814636, y: 0.08784188}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -509,7 +510,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.82512283, y: 0.29206604}
+  m_Size: {x: 0.82512283, y: 0.19758937}
   m_EdgeRadius: 0
 --- !u!61 &570128138
 BoxCollider2D:
@@ -563,6 +564,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.048837185, y: 0.945861}
   m_EdgeRadius: 0
+--- !u!114 &570128140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570128133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42969042a953f324189079d3a014c9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  desiredTag: FinishTrigger
+  selectedColliderIndex: 1
 --- !u!1 &604293999
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +593,7 @@ GameObject:
   - component: {fileID: 604294004}
   - component: {fileID: 604294005}
   - component: {fileID: 604294006}
+  - component: {fileID: 604294007}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -661,7 +677,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604293999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.59, y: -1.49, z: 0}
+  m_LocalPosition: {x: -8.47, y: -1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -818,6 +834,19 @@ MonoBehaviour:
   endPoint: {fileID: 1079258415}
   maxDistance: 5
   aimMultiplier: 4
+--- !u!114 &604294007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604293999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 543ebe53bf911c041941c69da86278fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalColliderTag: FinishTrigger
 --- !u!1 &1079258414
 GameObject:
   m_ObjectHideFlags: 0
