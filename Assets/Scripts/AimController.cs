@@ -12,29 +12,36 @@ public class AimController : MonoBehaviour
 
     private void Update()
     {
-        Vector3 mousePosition = Input.mousePosition;
-        Vector3 aimDirection = Camera.main.ScreenToWorldPoint(mousePosition) - transform.position;
-        aimDirection.z = 0f;
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 mousePosition = Input.mousePosition;
+            Vector3 aimDirection = Camera.main.ScreenToWorldPoint(mousePosition) - transform.position;
+            aimDirection.z = 0f;
 
-        // Нормалізуємо напрямок тяги
-        aimDirection.Normalize();
+            // Нормалізуємо напрямок тяги
+            aimDirection.Normalize();
 
-        // Множимо напрямок на множник, щоб змінити напрямок прицілу
-        Vector3 aimVector = aimDirection * -aimMultiplier;
+            // Множимо напрямок на множник, щоб змінити напрямок прицілу
+            Vector3 aimVector = aimDirection * -aimMultiplier;
 
-        // Обчислюємо позицію кінцевої точки прицілу
-        Vector3 targetPosition = transform.position + aimVector;
+            // Обчислюємо позицію кінцевої точки прицілу
+            Vector3 targetPosition = transform.position + aimVector;
 
-        // Обмежуємо відстань прицілу, якщо вона більше maxDistance
-        Vector3 clampedPosition = transform.position + Vector3.ClampMagnitude(aimVector, maxDistance);
+            // Обмежуємо відстань прицілу, якщо вона більше maxDistance
+            Vector3 clampedPosition = transform.position + Vector3.ClampMagnitude(aimVector, maxDistance);
 
-        // Оновлюємо позицію початкової та кінцевої точок
-        startPoint.position = transform.position;
-        endPoint.position = clampedPosition;
+            // Оновлюємо позицію початкової та кінцевої точок
+            startPoint.position = transform.position;
+            endPoint.position = clampedPosition;
 
-        // Оновлюємо лінію у LineRenderer
-        lineRenderer.SetPosition(0, startPoint.position);
-        lineRenderer.SetPosition(1, endPoint.position);
+            // Оновлюємо лінію у LineRenderer
+            lineRenderer.SetPosition(0, startPoint.position);
+            lineRenderer.SetPosition(1, endPoint.position);
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            lineRenderer.enabled = false;
+        }
     }
 
 }
