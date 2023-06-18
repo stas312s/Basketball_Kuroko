@@ -9,6 +9,8 @@ public class AimController : MonoBehaviour
     public Transform endPoint;
     public float maxDistance = 5f;
     public float aimMultiplier = 1.5f;
+    public BallController ballController;
+    public float aimMultiplierCoef = 0.1f;
 
     private void Update()
     {
@@ -18,12 +20,15 @@ public class AimController : MonoBehaviour
             Vector3 aimDirection = Camera.main.ScreenToWorldPoint(mousePosition) - transform.position;
             aimDirection.z = 0f;
 
+            
             // Нормалізуємо напрямок тяги
             aimDirection.Normalize();
+            Debug.Log(ballController.swipeDirection.magnitude);
+            aimMultiplier =  ballController.swipeDirection.magnitude * aimMultiplierCoef;
 
             // Множимо напрямок на множник, щоб змінити напрямок прицілу
             Vector3 aimVector = aimDirection * -aimMultiplier;
-
+            
             // Обчислюємо позицію кінцевої точки прицілу
             Vector3 targetPosition = transform.position + aimVector;
 
@@ -33,6 +38,7 @@ public class AimController : MonoBehaviour
             // Оновлюємо позицію початкової та кінцевої точок
             startPoint.position = transform.position;
             endPoint.position = clampedPosition;
+            
 
             // Оновлюємо лінію у LineRenderer
             lineRenderer.SetPosition(0, startPoint.position);

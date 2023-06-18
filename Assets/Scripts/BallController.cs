@@ -8,6 +8,7 @@ public class BallController : MonoBehaviour
     private Vector2 endMousePos;
     private Rigidbody2D rb;
     public float forceMultiplier = 5f;
+    public Vector2 swipeDirection;
 
     private void Start()
     {
@@ -16,20 +17,26 @@ public class BallController : MonoBehaviour
 
     private void Update()
     {
+        
         if (Input.GetMouseButtonDown(0))
         {
             startMousePos = Input.mousePosition;
         }
-        else if (Input.GetMouseButtonUp(0))
+        
+        if (Input.GetMouseButton(0))
         {
             endMousePos = Input.mousePosition;
+            swipeDirection = (endMousePos - startMousePos);
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            
             LaunchBall();
         }
     }
 
     private void LaunchBall()
     {
-        Vector2 swipeDirection = (endMousePos - startMousePos);
         Vector2 force = -swipeDirection * forceMultiplier;
         rb.AddForce(force, ForceMode2D.Impulse);
     }
