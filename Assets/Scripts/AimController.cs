@@ -23,7 +23,7 @@ public class AimController : MonoBehaviour
             
             // Нормалізуємо напрямок тяги
             aimDirection.Normalize();
-            Debug.Log(ballController.swipeDirection.magnitude);
+            
             aimMultiplier =  ballController.swipeDirection.magnitude * aimMultiplierCoef;
 
             // Множимо напрямок на множник, щоб змінити напрямок прицілу
