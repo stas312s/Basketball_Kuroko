@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 115636401}
   m_Layer: 0
   m_Name: Ground (2)
-  m_TagString: FinishTrigger
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,8 +184,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 115636399}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 8.471174, y: -0.5298299, z: 0.06092105}
-  m_LocalScale: {x: 20.273352, y: 0.4987, z: 1}
+  m_LocalPosition: {x: 8.471174, y: -0.8562, z: 0.06092105}
+  m_LocalScale: {x: 9.735855, y: 0.4987, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 28948729}
@@ -201,7 +201,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -510,7 +510,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.24, y: 0.28, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -849,7 +849,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &604294004
 MonoBehaviour:
@@ -865,6 +865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forceMultiplier: 0.1
   swipeDirection: {x: 0, y: 0}
+  isLaunched: 0
 --- !u!120 &604294005
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -996,6 +997,9 @@ MonoBehaviour:
   aimMultiplier: 5
   ballController: {fileID: 604294004}
   aimMultiplierCoef: 0.1
+  ballPrefab: {fileID: 604293999}
+  launchPoint: {fileID: 604294002}
+  launchForce: 10
 --- !u!1 &1079258414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1044,7 @@ GameObject:
   - component: {fileID: 1085063245}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: FinishTrigger
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1122,7 +1126,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1151,7 +1155,7 @@ GameObject:
   - component: {fileID: 1145536086}
   m_Layer: 0
   m_Name: Ground (3)
-  m_TagString: FinishTrigger
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1164,8 +1168,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145536084}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -12.188826, y: -0.5298299, z: 0.06092105}
-  m_LocalScale: {x: 20.273352, y: 0.4987, z: 1}
+  m_LocalPosition: {x: -12.188826, y: -0.8397, z: 0.06092105}
+  m_LocalScale: {x: 9.703516, y: 0.4987, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 28948729}
@@ -1181,7 +1185,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1373,7 +1377,7 @@ GameObject:
   - component: {fileID: 1786012897}
   m_Layer: 0
   m_Name: Ground (1)
-  m_TagString: FinishTrigger
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1403,7 +1407,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

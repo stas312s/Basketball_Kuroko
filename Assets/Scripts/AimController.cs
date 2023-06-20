@@ -11,9 +11,18 @@ public class AimController : MonoBehaviour
     public float aimMultiplier = 1.5f;
     public BallController ballController;
     public float aimMultiplierCoef = 0.1f;
+    public GameObject ballPrefab;
+    public Transform launchPoint;
+    public float launchForce = 10f;
 
-    private void Update()
+    public void Update()
     {
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            LaunchBall();
+        }
+        
         if (Input.GetMouseButton(0))
         {
             Vector3 mousePosition = Input.mousePosition;
@@ -48,6 +57,14 @@ public class AimController : MonoBehaviour
         {
             lineRenderer.enabled = false;
         }
+        
+    }
+    public void LaunchBall()
+    {
+        // Создание мяча на позиции launchPoint
+        GameObject ball = Instantiate(ballPrefab, launchPoint.position, Quaternion.identity);
+
+  
     }
 
 }
