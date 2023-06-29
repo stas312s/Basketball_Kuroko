@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BasketGoal : MonoBehaviour
 {
+    public int temp = 0;
     public string goalColliderTag = "FinishTrigger"; // 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -12,17 +13,24 @@ public class BasketGoal : MonoBehaviour
         // Перевіряємо, чи коллайдер має потрібний тег або ідентифікатор
         if (collision.CompareTag(goalColliderTag))
         {
-            
-            RestartScene();
+            StartCoroutine(WinRestart());
+
         }
     }
-
-    private void RestartScene()
+    
+    void Update()
     {
         
-        string currentSceneName = SceneManager.GetActiveScene().name;
+        
+    }
+    
+    
+    
+    
+    private IEnumerator WinRestart()
+    {
+        yield return new WaitForSeconds(0.7f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-        // Завантажуємо поточну сцену знову
-        SceneManager.LoadScene(currentSceneName);
     }
 }

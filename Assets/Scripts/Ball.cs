@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
+    
 
     public bool IsLaunched { get; private set; } = false;
 
-
+    public Score score;
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public CircleCollider2D col;
 
@@ -27,6 +28,7 @@ public class Ball : MonoBehaviour
     {
         rb.AddForce(force, ForceMode2D.Impulse);
         StartCoroutine(Restart());
+       
         IsLaunched = true;
     }
 
@@ -57,6 +59,12 @@ public class Ball : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
+        Zero();
     }
+
+    public void Zero()
+    {
+        PlayerPrefs.SetInt("Score", Score.instance.score = 0);
+    }
+
 }

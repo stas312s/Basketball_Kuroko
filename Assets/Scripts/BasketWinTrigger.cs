@@ -9,7 +9,7 @@ public class BasketWinTrigger : MonoBehaviour
     public string desiredTag = "FinishTrigger";
 
     // Індекс обраного колайдера
-    public int selectedColliderIndex = 2;
+    public int selectedColliderIndex = 1;
 
     private void Start()
     {
