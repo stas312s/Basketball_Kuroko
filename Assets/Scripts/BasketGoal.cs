@@ -7,7 +7,7 @@ public class BasketGoal : MonoBehaviour
 {
     public int temp = 0;
     public string goalColliderTag = "FinishTrigger"; // 
-
+    public static bool isWin;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Перевіряємо, чи коллайдер має потрібний тег або ідентифікатор
@@ -27,9 +27,11 @@ public class BasketGoal : MonoBehaviour
     
     
     
+    
     private IEnumerator WinRestart()
     {
         yield return new WaitForSeconds(0.7f);
+        isWin = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }

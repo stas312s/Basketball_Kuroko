@@ -44,7 +44,7 @@ public class Score : MonoBehaviour
     private void OnDestroy()
     {
         PlayerPrefs.SetInt("Score", score);
-        PlayerPrefs.Save();
+       
     }
 
     
