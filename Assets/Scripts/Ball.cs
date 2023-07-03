@@ -13,9 +13,34 @@ public class Ball : MonoBehaviour
     private Vector3 savedLocation;
     private string savePath = "save.json";
     public Transform transformToSave;
+    public string groundTag = "Ground";  // Тэг объекта земли
+    public float restartDelay = 2f;  // Задержка перед перезапуском сцены
+    private bool hasCollided = false;
     
+    public bool IsLaunched { get; private set; } = false;
 
+    public Score score;
+    [HideInInspector] public Rigidbody2D rb;
+    [HideInInspector] public CircleCollider2D col;
 
+    [HideInInspector] public Vector3 HumanPose
+    {
+        get { return transform.position; }
+    }
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        col = GetComponent<CircleCollider2D>();
+        initialPosition = transform.position;
+        transform.position = LoadTransform();
+        if (BasketGoal.isWin)
+        {
+            TransformBall();
+            BasketGoal.isWin = false;
+        }
+    }
+    
     public void SaveTransform(Transform transformToSave)
     {
         Vector3Serializable vector3Serializable = new Vector3Serializable();
@@ -36,26 +61,7 @@ public class Ball : MonoBehaviour
         Vector3Serializable vector3Serializable = JsonUtility.FromJson<Vector3Serializable>(json);
         return new Vector3(vector3Serializable.X, vector3Serializable.Y, vector3Serializable.Z);
     }
-
-
-
-    public bool IsLaunched { get; private set; } = false;
-
-    public Score score;
-    [HideInInspector] public Rigidbody2D rb;
-    [HideInInspector] public CircleCollider2D col;
-
-    [HideInInspector] public Vector3 HumanPose
-    {
-        get { return transform.position; }
-    }
-
-    void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        col = GetComponent<CircleCollider2D>();
-    }
-
+    
     public void Push(Vector2 force)
     {
         rb.AddForce(force, ForceMode2D.Impulse);
@@ -63,13 +69,23 @@ public class Ball : MonoBehaviour
        
         IsLaunched = true;
     }
-
-    
-
+ 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
         
-        
-    
+        if (collision.gameObject.CompareTag(groundTag) && !hasCollided)
+        {
+            hasCollided = true;
+            StartCoroutine(RestartScene());
+        }
+    }
 
+    private System.Collections.IEnumerator RestartScene()
+    {
+        yield return new WaitForSeconds(restartDelay);
+        LooseGame();
+    }
+    
     public void ActivateRb()
     {
         rb.isKinematic = false;
@@ -81,19 +97,6 @@ public class Ball : MonoBehaviour
         rb.angularVelocity = 0f;
         rb.isKinematic = true;
     }
-
-    void Start()
-    {
-        initialPosition = transform.position;
-        transform.position = LoadTransform();
-        if (BasketGoal.isWin)
-        {
-            TransformBall();
-            BasketGoal.isWin = false;
-        }
-        
-        
-    }
     
     public void TransformBall()
     {
@@ -104,16 +107,14 @@ public class Ball : MonoBehaviour
         SaveTransform(transform);
     }
 
-
-    
-    void Update()
-    {
-        
-    }
-
     private IEnumerator Restart()
     {
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(15.0f);
+        LooseGame();
+    }
+
+    private void LooseGame()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Zero();
     }
@@ -122,6 +123,5 @@ public class Ball : MonoBehaviour
     {
         PlayerPrefs.SetInt("Score", Score.instance.score = 0);
     }
-
 }
 
