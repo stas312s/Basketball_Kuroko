@@ -40,12 +40,12 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && PauseMenu.instance.CanInput)
         {
             isDragging = true;
             OnDragStart();
         }
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) && isDragging)
         {
             isDragging = false;
             OnDragEnd();

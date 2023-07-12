@@ -8,31 +8,21 @@ public class BasketGoal : MonoBehaviour
     public int temp = 0;
     public string goalColliderTag = "FinishTrigger"; // 
     public static bool isWin;
+    public AudioSource audioSource;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Перевіряємо, чи коллайдер має потрібний тег або ідентифікатор
         if (collision.CompareTag(goalColliderTag))
         {
             StartCoroutine(WinRestart());
-
+            audioSource.Play();
         }
     }
-    
-    void Update()
-    {
-        
-        
-    }
-    
-    
-    
-    
     
     private IEnumerator WinRestart()
     {
         yield return new WaitForSeconds(0.7f);
         isWin = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
     }
 }
