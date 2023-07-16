@@ -14,11 +14,5 @@ public class Follow : MonoBehaviour
     void Start()
     {
         transform.position = target.position + offSet;
-        
-        
-        
     }
-
-    
-   
 }

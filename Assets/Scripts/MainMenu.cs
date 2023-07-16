@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
 
     public void Exit()
     {
-        
+        settingsPanel.SetActive(false);
     }
 
 }

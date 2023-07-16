@@ -10,11 +10,12 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-
-    public int score = 0;
+  
     [SerializeField] private TextMeshProUGUI scoreText;
-    
+    [SerializeField] private TextMeshProUGUI highScoreText; // Текстовый компонент для отображения рекорда
     public static Score instance;
+    public int score = 0;
+    public int highScore = 0;
 
     private void Awake()
     {
@@ -30,6 +31,13 @@ public class Score : MonoBehaviour
         {
             PlayerPrefs.SetInt("score", score);
             score++;
+
+            if (score > highScore)
+            {
+                highScore = score;
+                PlayerPrefs.SetInt("HighScore", highScore);
+                highScoreText.text = "High Score: " + highScore.ToString();
+            }
         }
     }
 
@@ -39,21 +47,23 @@ public class Score : MonoBehaviour
         {
             score = PlayerPrefs.GetInt("Score");
         }
+
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            highScore = PlayerPrefs.GetInt("HighScore");
+        }
+
+        scoreText.text = score.ToString();
+        highScoreText.text = "High Score: " + highScore.ToString();
     }
-    
+
     private void OnDestroy()
     {
         PlayerPrefs.SetInt("Score", score);
-       
     }
-
-    
-
 
     void Update()
     {
-        
         scoreText.text = score.ToString();
-        
     }
 }

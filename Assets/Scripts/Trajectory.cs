@@ -55,10 +55,4 @@ public class Trajectory : MonoBehaviour
     {
         dotsParent.SetActive(false);
     }
-
-
-    void Update()
-    {
-        
-    }
 }
