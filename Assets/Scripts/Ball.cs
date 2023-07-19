@@ -78,11 +78,16 @@ public class Ball : MonoBehaviour
             hasCollided = true;
             StartCoroutine(RestartScene());
         }
+        
     }
 
     private System.Collections.IEnumerator RestartScene()
     {
         yield return new WaitForSeconds(restartDelay);
+        if (Score.instance.score > 0)
+        {
+            ADS.instance.ShowAd();
+        }
         LooseGame();
     }
     
