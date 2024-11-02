@@ -12,7 +12,6 @@ public class Ball : MonoBehaviour
     public Vector3 initialPosition;
     private Vector3 savedLocation;
     private string savePath = "save.json";
-    public Transform transformToSave;
     public string groundTag = "Ground";  // Тэг объекта земли
     public float restartDelay = 2f;  // Задержка перед перезапуском сцены
     private bool hasCollided = false;

@@ -36,7 +36,7 @@ public class Score : MonoBehaviour
             {
                 highScore = score;
                 PlayerPrefs.SetInt("HighScore", highScore);
-                highScoreText.text = "High Score: " + highScore.ToString();
+                highScoreText.text = " " + highScore.ToString();
             }
         }
     }
@@ -54,7 +54,7 @@ public class Score : MonoBehaviour
         }
 
         scoreText.text = score.ToString();
-        highScoreText.text = "High Score: " + highScore.ToString();
+        highScoreText.text = " " + highScore.ToString();
     }
 
     private void OnDestroy()

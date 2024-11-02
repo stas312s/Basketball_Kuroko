@@ -8,6 +8,7 @@ TagManager:
   - FinishTrigger
   - Ground
   - Shield
+  - Ring
   layers:
   - Default
   - TransparentFX

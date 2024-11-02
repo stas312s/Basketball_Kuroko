@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class BasketGoal : MonoBehaviour
 {
-    public int temp = 0;
     public string goalColliderTag = "FinishTrigger"; // 
     public static bool isWin;
     public AudioSource audioSource;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Перевіряємо, чи коллайдер має потрібний тег або ідентифікатор
+        
         if (collision.CompareTag(goalColliderTag))
         {
             StartCoroutine(WinRestart());

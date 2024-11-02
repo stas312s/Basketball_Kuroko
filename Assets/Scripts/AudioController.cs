@@ -21,6 +21,11 @@ public class AudioController : MonoBehaviour
         slider.onValueChanged.AddListener(ChangeVolume);  
     }
 
+    private void Update()
+    {
+       // SliderSound();
+    }
+
     private void OnDestroy()
     {
         slider.onValueChanged.RemoveListener(ChangeVolume);
@@ -29,11 +34,21 @@ public class AudioController : MonoBehaviour
     void ChangeVolume(float value)
     {
         BackgroundSound.instance.audio.volume = value;
+        SliderSound();
     }
 
-    void Update()
+    private void SliderSound()
     {
-        
+        if (slider.value == 0)
+        {
+            buttonAudio.GetComponent<Image>().sprite = audioOff;
+            AudioListener.volume = 0;
+        }
+        else if (slider.value > 0)
+        {
+            buttonAudio.GetComponent<Image>().sprite = audioOn;
+            AudioListener.volume = slider.value;
+        }
     }
 
     public void OnOffAudio()

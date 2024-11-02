@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject settingsPanel;
+    [SerializeField] private GameObject _settingsPanel;
+    [SerializeField] private GameObject _mainMenuPanel;
+    
     
     public void PlayGame()
     {
@@ -19,12 +21,14 @@ public class MainMenu : MonoBehaviour
 
     public void SettingsPanel()
     {
-        settingsPanel.SetActive(true);
+        _mainMenuPanel.SetActive(false);
+        _settingsPanel.SetActive(true);
     }
 
     public void Exit()
     {
-        settingsPanel.SetActive(false);
+        _mainMenuPanel.SetActive(true);
+        _settingsPanel.SetActive(false);
     }
 
 }
