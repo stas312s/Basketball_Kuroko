@@ -1,0 +1,41 @@
+Basketball Quest is governed by the Asset Store EULA; however, the following components are governed by the licenses indicated below:
+
+А. mixkit-hitting-the-basketball-ball-2096.wav
+    - Items under the Mixkit Sound Effects Free License can be used in your commercial and non-commercial projects for free.
+    - License details available here: https://mixkit.co/license/
+    - https://mixkit.co/free-sound-effects/basketball/
+    
+B. Basketball ball, hard hit.wav
+    - Items under the Mixkit Sound Effects Free License can be used in your commercial and non-commercial projects for free.
+    - License details available here: https://mixkit.co/license/
+    - https://mixkit.co/free-sound-effects/basketball/
+    
+C. mixkit-last-day-498.wav
+    - Items under the Mixkit Sound Effects Free License can be used in your commercial and non-commercial projects for free.
+    - License details available here: https://mixkit.co/license/
+    - https://mixkit.co/free-stock-music/tag/soul/
+
+D. zapsplat_sport_basketball_hit_backboard_71652.wav
+    - Items under the Zapsplat Sound Effects Free License can be used in your commercial and non-commercial projects for free.
+    - https://www.zapsplat.com/page/2/?s=basketball+&post_type=music&sound-effect-category-id    
+    - https://www.zapsplat.com/license-type/standard-license/	
+
+E. zapsplat_sport_basket_ball_very_hard_bounce_x1_on_asphalt_concrete_004_71160.wav
+    - Items under the Zapsplat Sound Effects Free License can be used in your commercial and non-commercial projects for free.
+    - https://www.zapsplat.com/page/2/?s=basketball+&post_type=music&sound-effect-category-id    
+    - https://www.zapsplat.com/license-type/standard-license/	
+
+F. Vector GUI icons
+    - Items under the Itch.Io Sound Effects Free License can be used in your commercial and non-commercial projects for free.
+    - https://penzilla.itch.io/vector-icon-pack
+
+
+G. basketball-hoop-clipart-xl
+    - Items under the Creazilla Sound Effects Free License can be used in your commercial and non-commercial projects for free.
+    - https://creazilla.com/media/clipart/76958/basketball-hoop
+    - https://creazilla.com/pages/creazilla-open-source-license
+
+H. basketball-clipart-l
+    - Items under the Creazilla Sound Effects Free License can be used in your commercial and non-commercial projects for free.
+    - https://creazilla.com/ru/media/clipart/59815/basketbol
+    - https://creazilla.com/pages/creazilla-open-source-license
