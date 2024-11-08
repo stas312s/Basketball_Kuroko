@@ -5,7 +5,7 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
     public class BackgroundSound : MonoBehaviour
     {
         public static BackgroundSound instance;
-        public AudioSource audio;
+        public AudioSource Audio;
 
         private void Awake()
         {

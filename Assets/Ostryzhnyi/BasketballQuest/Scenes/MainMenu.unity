@@ -822,7 +822,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 92.07, y: 51.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1234063967
 MonoBehaviour:
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -846,7 +846,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 0b12fe69c57dc9944b696cb0c80a8987, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1282,7 +1282,7 @@ MonoBehaviour:
   audioOff: {fileID: 21300000, guid: 3278f465ed140f349bbd9030486dac8c, type: 3}
   buttonAudio: {fileID: 1505916428}
   slider: {fileID: 1453368677}
-  clip: {fileID: 8300000, guid: ae6f91ee800841f40a9dc4cc345f7602, type: 3}
+  clip: {fileID: 8300000, guid: 610b3d5ca075cbb4bb3e44f6f856b452, type: 3}
 --- !u!1 &1820213903
 GameObject:
   m_ObjectHideFlags: 0

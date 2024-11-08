@@ -1498,6 +1498,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5163519446683153838, guid: 7db75a992d92f8046a1c44726bc50a67, type: 3}
+      propertyPath: Audio
+      value: 
+      objectReference: {fileID: 541656433}
     - target: {fileID: 5163519446683153839, guid: 7db75a992d92f8046a1c44726bc50a67, type: 3}
       propertyPath: m_Volume
       value: 0.08
@@ -1511,6 +1515,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7db75a992d92f8046a1c44726bc50a67, type: 3}
+--- !u!82 &541656433 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5163519446683153839, guid: 7db75a992d92f8046a1c44726bc50a67, type: 3}
+  m_PrefabInstance: {fileID: 541656432}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &557027012
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,7 +3329,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.2915397, y: 2.886048, z: 0.006388355}
-  m_LocalScale: {x: 1.9398746, y: 1.6898828, z: 1}
+  m_LocalScale: {x: 1.9398746, y: 1.939875, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1300122805}
@@ -4271,7 +4280,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4554e6f2587037240b12b7bfa5f58940, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 592b820458261a948bd7734975a18dd2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

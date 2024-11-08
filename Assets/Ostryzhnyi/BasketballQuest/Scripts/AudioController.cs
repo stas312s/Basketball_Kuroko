@@ -15,7 +15,7 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
     
         void Start()
         {
-            slider.value = BackgroundSound.instance.audio.volume;
+            slider.value = BackgroundSound.instance.Audio.volume;
             slider.onValueChanged.AddListener(ChangeVolume);  
         }
     
@@ -26,7 +26,7 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
     
         void ChangeVolume(float value)
         {
-            BackgroundSound.instance.audio.volume = value;
+            BackgroundSound.instance.Audio.volume = value;
             SliderSound();
         }
     
@@ -60,7 +60,7 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
     
         public void PlaySound()
         {
-            BackgroundSound.instance.audio.PlayOneShot(clip);
+            BackgroundSound.instance.Audio.PlayOneShot(clip);
         }
     }
 }

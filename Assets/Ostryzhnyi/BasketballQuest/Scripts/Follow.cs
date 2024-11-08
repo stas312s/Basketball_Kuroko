@@ -7,10 +7,7 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
     {
         public Transform target;
         public float followSpeed = 5f;
-        private bool shoulMove = false;
         public Vector3 offSet;
-
-
 
         void Start()
         {
