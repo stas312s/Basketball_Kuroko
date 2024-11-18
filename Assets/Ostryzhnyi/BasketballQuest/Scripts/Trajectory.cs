@@ -13,7 +13,7 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
 
         private Transform[] dotsList;
 
-        private Vector2 pos;
+        private Vector3 pos;
         private float timeStamp;
 
         void Start()
@@ -28,8 +28,7 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
 
             for (int i = 0; i < dotsNumber; i++)
             {
-                dotsList[i] = Instantiate(dotsPrefab, null).transform;
-                dotsList[i].parent = dotsParent.transform;
+                dotsList[i] = Instantiate(dotsPrefab, dotsParent.transform).transform;
             }
         }
 
@@ -42,6 +41,7 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
                 pos.x = (ballPos.x + forceApplied.x * timeStamp);
                 pos.y = (ballPos.y + forceApplied.y * timeStamp) -
                         (Physics2D.gravity.magnitude * timeStamp * timeStamp) / 2f;
+                pos.z = 0f;
 
                 dotsList[i].position = pos;
                 timeStamp += dotSpacing;

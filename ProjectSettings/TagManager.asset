@@ -46,3 +46,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Dot
+    uniqueID: 3405306201
+    locked: 0
