@@ -11,6 +11,8 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
         [SerializeField] private GameObject dotsPrefab;
         [SerializeField] private float dotSpacing;
 
+        [SerializeField] private float maxStretch = 5f; 
+
         private Transform[] dotsList;
 
         private Vector3 pos;
@@ -34,6 +36,11 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
 
         public void UpdateDots(Vector3 ballPos, Vector2 forceApplied)
         {
+            if (forceApplied.magnitude > maxStretch)
+            {
+                forceApplied = forceApplied.normalized * maxStretch;
+            }
+
             timeStamp = dotSpacing;
 
             for (int i = 0; i < dotsNumber; i++)
