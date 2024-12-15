@@ -18,7 +18,6 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
 
         void Start()
         {
-            Hide();
             PrepareDots();
         }
 

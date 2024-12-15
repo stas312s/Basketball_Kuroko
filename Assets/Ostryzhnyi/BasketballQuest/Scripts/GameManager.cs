@@ -25,21 +25,27 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
             }
         }
 
-        void Start()
+        private void Start()
         {
             cam = Camera.main;
             ball.DesativateRb();
+            
+#if UNITY_EDITOR
+            isDragging = true;
+            OnDragStart();
+#else
+            trajectory.Hide();
+#endif
         }
 
-
-        void Update()
+        private void Update()
         {
             if (ball.IsLaunched)
             {
                 return;
             }
 
-            if (Input.GetMouseButtonDown(0) && PauseMenu.instance.CanInput)
+            if (Input.GetMouseButtonDown(0) && PauseMenu.instance.CanInput && !isDragging)
             {
                 isDragging = true;
                 OnDragStart();
@@ -57,16 +63,18 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
             }
         }
 
-        void OnDragStart()
+        private void OnDragStart()
         {
-
             ball.DesativateRb();
+#if UNITY_EDITOR
+            startPoint = cam.ScreenToWorldPoint(new Vector2(Screen.width / 2, Screen.height / 2));
+#else
             startPoint = cam.ScreenToWorldPoint(Input.mousePosition);
-
+#endif
             trajectory.Show();
         }
 
-        void OnDrag()
+        private void OnDrag()
         {
 
             endPoint = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -78,18 +86,11 @@ namespace Ostryzhnyi.BasketballQuest.Scripts
             trajectory.UpdateDots(ball.HumanPose, force);
         }
 
-        void OnDragEnd()
+        private void OnDragEnd()
         {
-
-
             ball.ActivateRb();
 
-
-
-
             ball.Push(force);
-
-
 
             trajectory.Hide();
         }
